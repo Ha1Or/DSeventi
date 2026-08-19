@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #071426;
+  --surface: rgba(15, 35, 62, 0.82);
+  --surface-light: #142e50;
+  --text: #f3f7ff;
+  --muted: #8fa8c8;
+  --accent: #52d6e8;
+  --accent-dark: #09283e;
+  --line: rgba(144, 170, 207, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html { scrollbar-gutter: stable; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(28, 203, 209, 0.432),
+      transparent 50%
+    ),
+    var(--background);
+  background-attachment: fixed;
+}
+
+/* Основной контейнер страницы. */
+.page-shell {
+  width: min(860px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 72px 0 34px;
+}
+
+/* Верхняя часть страницы. */
+.hero {
+  text-align: center;
+  animation: appear .7s ease both;
+}
+
+/* Логотип KL. */
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 55px;
+  margin: 0 auto 10px;
+  border: 1px solid rgba(82, 214, 232, .5);
+  border-radius: 20px;
+  color: var(--accent);
+  font-size: 25px;
+  font-weight: 800;
+  background: rgba(82, 214, 232, .09);
+  box-shadow: 0 0 32px rgba(37, 203, 224, .12);
+}
+
+/* Маленькие подписи над заголовками. */
+.eyebrow,
+.section-label,
+.event-type {
+  margin: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  display: inline-block;
+  transform: translate(-1px, -8px);
+}
+
+/* Главный заголовок страницы. */
+h1 {
+  margin: 14px 0 16px;
+  font-size: clamp(32px, 6vw, 58px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+/* Дополнительный текст под главным заголовком. */
+.intro {
+  max-width: 550px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Подпись автора в нижнем правом углу. */
+.section-header {
+  position: fixed;
+  right: 24px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+/* Плавное появление списка карточек. */
+.events-section {
+  animation: appear .7s .2s ease both;
+}
+
+/* Заголовок подписи автора. */
+h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+/* Сетка карточек событий. */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+/* Внешний вид карточки события. */
+.event-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  transition: transform .2s ease, border-color .2s ease;
+  cursor: pointer;
+}
+
+/* Эффект при наведении на карточку. */
+.event-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(82, 214, 232, .55);
+}
+
+/* Название игры внутри карточки. */
+.event-info h3 {
+  margin: 6px 0 5px;
+  font-size: 18px;
+  transform: translate(21px, -4px);
+}
+
+/* Блокирует прокрутку страницы при открытом окне. */
+.modal-open {
+  overflow: hidden;
+}
+
+/* Скрывает модальное окно до клика по карточке. */
+.event-modal[hidden] {
+  display: none;
+}
+
+/* Контейнер модального окна на весь экран. */
+.event-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* Затемнение фона за модальным окном. */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 9, 20, .76);
+}
+
+/* Само окно с описанием события. */
+.modal-window {
+  position: relative;
+  width: min(460px, 100%);
+  padding: 34px 28px 30px;
+  border: 1px solid rgba(82, 214, 232, .42);
+  border-radius: 12px;
+  color: var(--text);
+  background: #102a49;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .4);
+  animation: modal-appear .2s ease both;
+}
+
+/* Кнопка закрытия модального окна. */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(82, 214, 232, .5);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 27px;
+  line-height: 27px;
+  background: rgba(82, 214, 232, .1);
+}
+
+/* Цвет кнопки закрытия при наведении. */
+.modal-close:hover {
+  color: #09283e;
+  background: var(--accent);
+}
+
+/* Отступы заголовка и оформление описания события. */
+.modal-window h2 {
+  margin: 10px 0 12px;
+}
+
+.modal-description {
+  margin: 0;
+  color: #dcecff;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.modal-description a {
+  color: #8ff3ff;
+  font-weight: 700;
+}
+@keyframes modal-appear { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes appear { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 620px) { .page-shell { padding-top: 48px; } .section-header { right: 18px; bottom: 16px; } .event-list { grid-template-columns: 1fr; } }

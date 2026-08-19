@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Список Ивентов Discord</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page-shell">
+		<header class="hero">
+			<div class="brand-mark" aria-hidden="true">KL</div>
+			<p class="eyebrow">DISCORD KOLIN</p>
+			<h1>Список Ивентов Discord</h1>			
+		</header>
+		<header class="section-header">
+			<h2>By Ha1Or</h2>
+		</header>
+		<section class="events-section">
+			<div class="event-list" id="event-list">
+				<article class="event-card" data-description="заходишь в игру и создаёшь лобби "><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Among Us</h3></div></article>
+				<article class="event-card" data-description="заходишь на ссылку логинешся и создаёшь игру " data-link="https://bunker-online.com/ru"><div class="event-info"><span class="event-type">🏢 ИГРЫ</span><h3>Бункер онлайн</h3></div></article>
+				<article class="event-card" data-description="заходишь на ссылку пришешь свой ник " data-link="https://garticphone.com/"><div class="event-info"><span class="event-type">🖼️ ТВОРЧЕСТВО</span><h3>Gartic Phone</h3></div></article>
+				<article class="event-card" data-description="выбираешь режим и играешь"><div class="event-info"><span class="event-type">✨ ИГРЫ</span><h3>Jackbox</h3></div></article>
+				<article class="event-card" data-description="я не играл но там наверное просто создашь лобби"><div class="event-info"><span class="event-type">🎴 ИГРЫ</span><h3>Монополия</h3></div></article>
+				<article class="event-card" data-description="скачиваешь радмин впн и через него другие игроки должны зайти " data-link="https://www.radmin-vpn.com/ru/"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Прятки в CS 2</h3></div></article>
+				<article class="event-card" data-description="различные карты на выбывание то что захочешь провести"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Garrys Mod</h3></div></article>
+				<article class="event-card" data-description="создаёшь сервер атернос для билд баттл или играть в бед варс " data-link="https://aternos.org/:ru/"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Minecraft</h3></div></article>
+				<article class="event-card" data-description="логинешся через гугл или по другому потом создаёшь лобби"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Goos Goos Duck</h3></div></article>
+				<article class="event-card" data-description="разные плейсы по типу выбывания"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Roblox</h3></div></article>
+				<article class="event-card" data-description="забераешь игру по ссылке и создаёшь лобби " data-link="https://store.steampowered.com/app/1906220/_/"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>Мафия Онлайн</h3></div></article>
+				<article class="event-card" data-description="заходишь по ссылке пишишь свой ник и создаёшь приватную комнату " data-link="https://skribbl.ru/?room=vbtjriegel"><div class="event-info"><span class="event-type">🎮 ИГРЫ</span><h3>skribbl.io</h3></div></article>
+				<article class="event-card" data-description="типо Brawl Stars ,Clash Royale ,Standoff 2 "><div class="event-info"><span class="event-type">📚 ИГРЫ</span><h3>Различные турниры</h3></div></article>
+			</div>
+		</section>
+	</main>
+	<div class="event-modal" id="event-modal" hidden>
+		<div class="modal-backdrop" data-close-modal></div>
+		<section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+			<button class="modal-close" type="button" aria-label="Закрыть" data-close-modal>&times;</button>
+			<p class="event-type" id="modal-type"></p>
+			<h2 id="modal-title"></h2>
+			<p class="modal-description" id="modal-description"></p>
+		</section>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
