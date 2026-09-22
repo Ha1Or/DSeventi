@@ -8,6 +8,7 @@
   --muted: #8fa8c8;
   --accent: #52d6e8;
   --accent-dark: #09283e;
+  --title-color: #52d6e8;
   --line: rgba(144, 170, 207, 0.18);
 }
 
@@ -74,11 +75,13 @@ body {
 }
 
 /* Главный заголовок страницы. */
-h1 {
+.page-title {
   margin: 14px 0 16px;
+  color: var(--title-color);
   font-size: clamp(32px, 6vw, 58px);
   line-height: 1.08;
   letter-spacing: 0;
+  text-shadow: 0 0 18px rgba(82, 214, 232, .22);
 }
 
 /* Дополнительный текст под главным заголовком. */
